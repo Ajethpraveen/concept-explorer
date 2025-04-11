@@ -26,7 +26,7 @@ A terminal-based tool that visually maps the connections between ideas by explor
 1. Clone the repo (or just copy the `explorer.py` code):
 
     ```bash
-    git clone [https://gist.github.com/0be0dd20b0200fa4482e4fa795e40550.git](https://github.com/UdaraJay/concept-explorer.git)
+    git clone https://github.com/UdaraJay/concept-explorer.git
     cd concept-explorer
     ```
 
