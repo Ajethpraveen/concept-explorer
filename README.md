@@ -1,6 +1,8 @@
 # 🌳 Concept explorer
 A terminal-based tool that visually maps the connections between ideas by exploring diverse related concepts. Starting from a single root concept, it builds an expanding tree of interconnected ideas that span across different domains and intellectual territories.
 
+![concept-exporer screenshot](explorer.png)
+
 ## Features
 
 - **Interactive visualization**: Watch in real-time as the concept web grows with a dynamic ASCII tree display
