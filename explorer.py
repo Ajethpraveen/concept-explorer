@@ -23,6 +23,36 @@ class ConceptExplorer:
         # terminal dimensions
         self.term_width, self.term_height = shutil.get_terminal_size((80, 24))
         
+    def get_available_models(self):
+        """Get a list of available models from Ollama."""
+        url = "http://localhost:11434/api/tags"
+        try:
+            response = requests.get(url, timeout=10)
+            response.raise_for_status()
+            return [model['name'] for model in response.json().get('models', [])]
+        except Exception as e:
+            print(f"{Fore.RED}Error connecting to Ollama: {str(e)}{Style.RESET_ALL}")
+            return []
+            
+    def check_model_availability(self):
+        """Check if the specified model is available in Ollama."""
+        available_models = self.get_available_models()
+        if not available_models:
+            return False
+            
+        # Check if the exact model name exists
+        if self.model in available_models:
+            return True
+            
+        # Check if model exists with a tag (e.g., "llama3:latest" when user specified "llama3")
+        for model_name in available_models:
+            if model_name.startswith(f"{self.model}:"):
+                # Found a match with a tag, update the model name to use the full name
+                self.model = model_name
+                return True
+                
+        return False
+            
     def query_ollama(self, prompt):
         """Query Ollama using the generate API."""
         url = "http://localhost:11434/api/generate"
@@ -34,6 +64,12 @@ class ConceptExplorer:
         }
         
         try:
+            # Check if model is available first
+            if not self.check_model_availability():
+                print(f"{Fore.RED}Error: Model '{self.model}' is not available in Ollama.{Style.RESET_ALL}")
+                print(f"{Fore.YELLOW}Please pull the model first with: 'ollama pull {self.model}'{Style.RESET_ALL}")
+                return "[]"
+                
             print(f"{Fore.CYAN}Querying Ollama generate API...{Style.RESET_ALL}")
             response = requests.post(url, headers=headers, json=data, timeout=30)
             response.raise_for_status()
@@ -454,6 +490,22 @@ if __name__ == "__main__":
         # Create the concept explorer
         explorer = ConceptExplorer(model=model)
         
+        # Check if model is available before starting
+        if not explorer.check_model_availability():
+            print(f"{Fore.RED}Error: Model '{model}' is not available in Ollama.{Style.RESET_ALL}")
+            print(f"{Fore.YELLOW}Please pull the model first with: 'ollama pull {model}'{Style.RESET_ALL}")
+            
+            # Display available models
+            available_models = explorer.get_available_models()
+            if available_models:
+                print(f"{Fore.GREEN}Available models:{Style.RESET_ALL}")
+                for i, available_model in enumerate(available_models, 1):
+                    print(f"{Fore.CYAN}{i}. {available_model}{Style.RESET_ALL}")
+                print(f"{Fore.YELLOW}Try using one of these models with: python explorer.py --model=<model_name>{Style.RESET_ALL}")
+            else:
+                print(f"{Fore.YELLOW}No models available. Please pull a model with: 'ollama pull <model_name>'{Style.RESET_ALL}")
+            sys.exit(1)
+            
         # Build the concept web with enhanced diversity
         try:
             explorer.build_concept_web(root_concept, max_depth=max_depth, diversity_bias=diversity_level)
